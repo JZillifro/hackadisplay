@@ -3,46 +3,59 @@ package com.supplyframeproject.hackadisplay.model;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Project {
+public class User {
+
     @Getter
     int id;
+
     @Getter
     String url;
+
     @Getter
-    int owner_id;
+    String username;
+
     @Getter
     @Setter
-    User owner;
+    String screen_name;
+
     @Getter
-    String name;
-    @Getter
-    String summary;
-    @Getter
-    String description;
+    int rank;
+
     @Getter
     String image_url;
-    @Getter
-    int views;
-    @Getter
-    int comments;
+
     @Getter
     int followers;
+
+    @Getter
+    int following;
+
+    @Getter
+    int projects;
     @Getter
     int skulls;
+
     @Getter
-    int logs;
+    int pages;
+
     @Getter
-    int details;
+    String location;
+
     @Getter
-    int instruction;
+    String about_me;
+
     @Getter
-    int components;
+    String who_am_i;
+
     @Getter
-    int images;
+    String what_i_have_done;
+
+    @Getter
+    String what_i_would_like_to_do;
+
     @Getter
     int created;
-    @Getter
-    int updated;
+
     @Getter
     String[] tags;
 }
