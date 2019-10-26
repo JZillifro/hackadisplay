@@ -1,6 +1,7 @@
 package com.supplyframeproject.hackadisplay.controller;
 
 import com.supplyframeproject.hackadisplay.model.*;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -55,6 +56,7 @@ public class HackadisplayController {
         return "cookieSuccess";
     }
 
+    @Cacheable("projects")
     @RequestMapping("/projects")
     public ModelAndView projects(@CookieValue(value = "hackadisplay_auth_token", defaultValue = "") String token, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
         RestTemplate restTemplate = new RestTemplate();
@@ -95,5 +97,7 @@ public class HackadisplayController {
         modelAndView.addObject("projectPage", projectPage);
         return modelAndView;
     }
+
+    
 
 }
