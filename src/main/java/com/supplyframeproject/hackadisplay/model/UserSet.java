@@ -2,7 +2,7 @@ package com.supplyframeproject.hackadisplay.model;
 
 import lombok.Getter;
 
-public class UserBatch {
+public class UserSet {
 
     @Getter
     User[] users;

@@ -14,6 +14,9 @@ public class Project {
     @Setter
     User owner;
     @Getter
+    @Setter
+    UserSet team;
+    @Getter
     String name;
     @Getter
     String summary;
@@ -45,4 +48,13 @@ public class Project {
     int updated;
     @Getter
     String[] tags;
+    @Setter
+    @Getter
+    ImageSet imageSet;
+    @Setter
+    @Getter
+    String createdFormatted;
+    @Setter
+    @Getter
+    String updatedFormatted;
 }

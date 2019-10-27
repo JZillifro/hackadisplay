@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>HackaDisplay</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
     <div class="Title">Projects</div>
     <div class="Grid">
-        <div class="Panel" th:each="project : ${projectPage.projects}">
+        <a class="Panel" th:each="project : ${projectsPage.projects}" th:href="${'/projects/'+project.id}">
             <div class="PanelImageSection"><img class="PanelImage" th:src="${project.image_url}"  alt="Not found"></div>
             <div class="PanelTextSection">
                 <div class="PanelNameText" th:text="${project.name}">Name</div>
@@ -25,16 +25,16 @@
                     <div th:text="${project.owner.screen_name}">Owner Name</div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="PageNav">
-        <a class="PageButton PageButtonfalse" th:if="${projectPage.page > 1}" th:href="${'/projects?page='+(projectPage.page-1)}">&#171;</a>
-        <a th:class="${'PageButton PageButton'+(projectPage.page == 1)}" href="/projects?page=1">1</a>
-        <div class="dotdotdot" th:if="${projectPage.page-2 > 2}">...</div>
-        <a th:class="${'PageButton PageButton'+(projectPage.page == i)}" th:each="i: ${#numbers.sequence(projectPage.page-2, projectPage.page+2)}" th:text="${i}" th:href="${'/projects?page='+i}" th:if="${i > 1 && i < projectPage.last_page}">x</a>
-        <div class="dotdotdot" th:if="${projectPage.page+2 < projectPage.last_page-1}">...</div>
-        <a th:class="${'PageButton PageButton'+(projectPage.page == projectPage.last_page)}" th:text="${projectPage.last_page}" th:href="${'/projects?page='+projectPage.last_page}">last</a>
-        <a class="PageButton PageButtonfalse" th:if="${projectPage.page < projectPage.last_page}" th:href="${'/projects?page='+(projectPage.page+1)}">&#187;</a>
+        <a class="PageButton PageButtonfalse" th:if="${projectsPage.page > 1}" th:href="${'/projects?page='+(projectsPage.page-1)}">&#171;</a>
+        <a th:class="${'PageButton PageButton'+(projectsPage.page == 1)}" href="/projects?page=1">1</a>
+        <div class="dotdotdot" th:if="${projectsPage.page-2 > 2}">...</div>
+        <a th:class="${'PageButton PageButton'+(projectsPage.page == i)}" th:each="i: ${#numbers.sequence(projectsPage.page-2, projectsPage.page+2)}" th:text="${i}" th:href="${'/projects?page='+i}" th:if="${i > 1 && i < projectsPage.last_page}">x</a>
+        <div class="dotdotdot" th:if="${projectsPage.page+2 < projectsPage.last_page-1}">...</div>
+        <a th:class="${'PageButton PageButton'+(projectsPage.page == projectsPage.last_page)}" th:text="${projectsPage.last_page}" th:href="${'/projects?page='+projectsPage.last_page}">last</a>
+        <a class="PageButton PageButtonfalse" th:if="${projectsPage.page < projectsPage.last_page}" th:href="${'/projects?page='+(projectsPage.page+1)}">&#187;</a>
     </div>
 </body>
 </html>
