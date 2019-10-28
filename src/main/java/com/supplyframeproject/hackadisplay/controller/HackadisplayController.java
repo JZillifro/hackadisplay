@@ -33,6 +33,9 @@ public class HackadisplayController {
         return new RedirectView("https://hackaday.io/authorize?client_id=" + clientID + "&state=<optional>&response_type=code");
     }
 
+    @GetMapping("/error")
+    public String error() { return "error"; }
+
     @GetMapping("/")
     public String home() {
         return "home";
