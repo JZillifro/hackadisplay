@@ -21,9 +21,10 @@ import java.util.Map;
 
 @Controller
 public class HackadisplayController {
-    String clientID = "8oBvmZozI6op98W1u8qfWnBnsWwJ016M4AQvrHDCNgpIJDPZ";
-    String clientSecret = "t0mqizevgcXrlJYAgzkiSrAWJMHlBfJgGT9ub6nmPyHsHytG";
-    String apiKey = "D5xeZrMHcBiWkIXT";
+//    these should be secret
+    final String clientID = "8oBvmZozI6op98W1u8qfWnBnsWwJ016M4AQvrHDCNgpIJDPZ";
+    final String clientSecret = "t0mqizevgcXrlJYAgzkiSrAWJMHlBfJgGT9ub6nmPyHsHytG";
+    final String apiKey = "D5xeZrMHcBiWkIXT";
 
     @GetMapping("/logIn")
     public RedirectView logIn(RedirectAttributes attributes) {

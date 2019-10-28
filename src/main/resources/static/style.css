@@ -5,6 +5,29 @@ html, body {
   font-family: Helvetica;
 }
 
+a {
+  color: white;
+  text-decoration-color: white;
+}
+
+.HomeBox {
+  width: 100%;
+  max-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.HomeTitle {
+  font-size: 30vw;
+}
+
+.HomeSubtitle {
+  font-size: 20vw;
+}
+
 .Margin {
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -33,11 +56,16 @@ html, body {
 
 .ProjectImageSelectSection {
   display: flex;
-  width: 100%;
+  max-width: 100%;
   height: 25vh;
   justify-content: center;
   margin-bottom: 1vh;
   margin-top: 1vh;
+  overflow: hidden;
+}
+
+.ProjectImageSelectSection:hover {
+  cursor: zoom-in;
 }
 
 .ProjectImageSelect {
@@ -167,7 +195,6 @@ html, body {
   border-color: white;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
   margin: 1vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
@@ -189,7 +216,7 @@ html, body {
 }
 
 .PageButtonfalse {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
@@ -209,6 +236,20 @@ html, body {
   font-family: Helvetica;
   border-bottom: 0.5vw solid;
   border-bottom-color: white;
+}
+
+.HomeBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.HomeTitle {
+  font-size: 10vw;
+}
+
+.HomeSubtitle {
+  font-size: 5vw;
 }
 
 .PanelImageSection {
@@ -287,11 +328,11 @@ html, body {
   min-width: 310px;
   min-height: 310px;
   max-height: 28vw;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 1vw;
   display: flex;
   border: 5px solid;
-  border-color: black;
+  border-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   flex-wrap: wrap;
   justify-content: space-around;

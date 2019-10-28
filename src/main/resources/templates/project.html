@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="ProjectInfoSection Margin">
-                <div class="ProjectDescription" th:text="${projectPage.getDescription()}">Description</div>
+                <div class="ProjectDescription" ><div th:remove="tag" th:utext="${projectPage.getDescription()}">Description</div></div>
                 <div class="ProjectOtherInfo">
                     <div class="ProjectInfo" th:text="${'Followers: '+projectPage.getFollowers()}">followers</div>
                     <div class="ProjectInfo" th:text="${'Skulls: '+projectPage.getSkulls()}">skulls</div>
@@ -28,32 +28,34 @@
                     <div class="ProjectInfo" th:text="${'Updated: '+projectPage.getUpdatedFormatted()}">updated</div>
                 </div>
             </div>
+
             <div class="ProjectOwnerSection Margin">
                 <div class="ProjectOwnerPicSection"><img class="ProjectOwnerPic" th:src="${projectPage.getOwner().getImage_url()}" alt="Not Found"></div>
                 <div class="ProjectOwnerTextSection">
+                    <div class="ProjectSumm Margin">The Creator:</div>
                     <div>
                         <div class="ProjectOwnerName" th:text="${projectPage.getOwner().getScreen_name()}">name</div>
                         <a class="ProjectOwnerUName" th:href="${projectPage.getOwner().getUrl()}" th:text="${projectPage.getOwner().getUsername()}">U name</a>
                     </div>
                     <div>
+                        <div class="ProjectOwnerAboutTitle">Who I am:</div>
+                        <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getWho_am_i()}">about</div></div>
+                    </div>
+                    <div>
                         <div class="ProjectOwnerAboutTitle">About me:</div>
-                        <div class="ProjectOwnerAbout" th:text="${projectPage.getOwner().getAbout_me()}">about</div>
+                        <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getAbout_me()}">about</div></div>
                     </div>
                     <div>
                         <div class="ProjectOwnerAboutTitle">What I would like to do:</div>
-                        <div class="ProjectOwnerAbout" th:text="${projectPage.getOwner().getWho_am_i()}">about</div>
+                        <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getWhat_i_would_like_to_do()}">about</div></div>
                     </div>
                     <div>
                         <div class="ProjectOwnerAboutTitle">What I have done:</div>
-                        <div class="ProjectOwnerAbout" th:text="${projectPage.getOwner().getWhat_i_have_done()}">about</div>
-                    </div>
-                    <div>
-                        <div class="ProjectOwnerAboutTitle">What I would like to do:</div>
-                        <div class="ProjectOwnerAbout" th:text="${projectPage.getOwner().getWhat_i_would_like_to_do()}">about</div>
+                        <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getWhat_i_have_done()}">about</div></div>
                     </div>
                 </div>
             </div>
-            <div class="ProjectTagHolder"><div class="ProjectTagSection"><div class="ProjectTag" th:each="tag: ${projectPage.getTags()}" th:text="${tag}"></div></div></div>
+            <div class="ProjectTagHolder"><div class="ProjectTagSection"><div class="ProjectTag">Tags: </div><div class="ProjectTag" th:each="tag: ${projectPage.getTags()}" th:text="${tag}"></div></div></div>
         </div>
     </div>
     <script type="text/javascript" th:src="@{/js/imageControl.js}"></script>
