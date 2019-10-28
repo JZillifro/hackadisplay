@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <title>HackaDisplay</title>
@@ -37,19 +36,19 @@
                         <div class="ProjectOwnerName" th:text="${projectPage.getOwner().getScreen_name()}">name</div>
                         <a class="ProjectOwnerUName" th:href="${projectPage.getOwner().getUrl()}" th:text="${projectPage.getOwner().getUsername()}">U name</a>
                     </div>
-                    <div>
+                    <div th:if="${projectPage.getOwner().getWho_am_i() != null && !projectPage.getOwner().getWho_am_i().equals('')}">
                         <div class="ProjectOwnerAboutTitle">Who I am:</div>
                         <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getWho_am_i()}">about</div></div>
                     </div>
-                    <div>
+                    <div th:if="${projectPage.getOwner().getAbout_me() != null && !projectPage.getOwner().getAbout_me().equals('')}">
                         <div class="ProjectOwnerAboutTitle">About me:</div>
                         <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getAbout_me()}">about</div></div>
                     </div>
-                    <div>
+                    <div th:if="${projectPage.getOwner().getWhat_i_would_like_to_do() != null && !projectPage.getOwner().getWhat_i_would_like_to_do().equals('')}">
                         <div class="ProjectOwnerAboutTitle">What I would like to do:</div>
                         <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getWhat_i_would_like_to_do()}">about</div></div>
                     </div>
-                    <div>
+                    <div th:if="${projectPage.getOwner().getWhat_i_have_done() != null && !projectPage.getOwner().getWhat_i_have_done().equals('')}">
                         <div class="ProjectOwnerAboutTitle">What I have done:</div>
                         <div class="ProjectOwnerAbout"><div th:remove="tag" th:utext="${projectPage.getOwner().getWhat_i_have_done()}">about</div></div>
                     </div>
