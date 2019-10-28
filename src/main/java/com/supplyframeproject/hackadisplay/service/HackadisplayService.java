@@ -24,7 +24,7 @@ public class HackadisplayService {
         String authToken = authTokenBuilder.toString();
         headers.set("Authorization", authToken);
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
-        StringBuilder urlBuilder = new StringBuilder("https://api.hackaday.io/v1/projects?per_page=48&api_key=");
+        StringBuilder urlBuilder = new StringBuilder("https://api.hackaday.io/v1/projects?per_page=9&api_key=");
         urlBuilder.append(apiKey);
         urlBuilder.append("&page=");
         urlBuilder.append(page);
